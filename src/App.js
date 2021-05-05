@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
 
 function App() {
+
+  const entries = [
+    {
+      id: 1,
+      date: "05-05-2021 10:45",
+      text: "Today I went to Waitrose"
+    },
+    {
+      id: 2,
+      date: "04-05-2021 12:45",
+      text: "I played with the cat under the rain"
+    },
+    {
+      id: 3,
+      date: "03-05-2021 17:14",
+      text: "We spent the weekend playing WoW!"
+    }
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World!</h1>
+      {entries.map((entry) => <p>{entry.text}</p>)}
     </div>
   );
 }
