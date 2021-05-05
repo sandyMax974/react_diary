@@ -1,10 +1,12 @@
 import './App.css';
 import ReactDOM from 'react-dom';
 import React from 'react'
-import Page from './components/Page';
 import EntryList from './components/EntryList';
+import AddEntry from './components/AddEntry'
+import Header from './components/Header'
 
 function App() {
+  let user = 'Sandy'
 
   const entries = [
     {
@@ -26,8 +28,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Navbar</h1>
-      <Page />
+      <Header user={user}/>
+      <AddEntry />
       <EntryList entries={entries} />
     </div>
   );

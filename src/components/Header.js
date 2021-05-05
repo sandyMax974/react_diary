@@ -1,11 +1,10 @@
 import React from 'react'
-import DateTime from './DateTime'
 import NewButton from './NewButton'
 
-const Header = () => {
+const Header = ({ user }) => {
   return (
-    <header>
-      <DateTime />
+    <header style={{ margin: '0 0 10px 0', backgroundColor: 'steelblue' }}>
+      <h1>{user.toUpperCase()}'S DIARY</h1>
       <NewButton />
     </header>
   )

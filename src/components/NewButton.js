@@ -3,7 +3,7 @@ import React from 'react'
 
 const NewButton = () => {
   return (
-      <button style={{marginLeft: '10px', display: 'inline-block' }}>Add Entry</button>
+      <button style={{margin: '0 0 10px 0', display: 'inline-block' }}>Add Entry</button>
   )
 }
 
