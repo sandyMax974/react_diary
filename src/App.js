@@ -1,14 +1,12 @@
 import './App.css';
-import ReactDOM from 'react-dom';
-import React from 'react'
+import React, { useState } from 'react'
 import EntryList from './components/EntryList';
-import AddEntry from './components/AddEntry'
+import EntryForm from './components/EntryForm'
 import Header from './components/Header'
 
-function App() {
-  let user = 'Sandy'
 
-  const entries = [
+function App() {
+  const [entries, setEntries] = useState([
     {
       id: 1,
       date: "05-05-2021 10:45",
@@ -24,12 +22,20 @@ function App() {
       date: "03-05-2021 17:14",
       text: "We spent the weekend playing WoW! Our characters are now level 45! :)"
     }
-  ]
+  ])
+  
+  let user = 'Sandy'
+
+  const addEntry = (entry) => {
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newEntry = {id, ...entry}
+    setEntries([...entries, newEntry])
+  }
 
   return (
     <div className="App">
       <Header user={user}/>
-      <AddEntry />
+      <EntryForm onSave={addEntry} />
       <EntryList entries={entries} />
     </div>
   );
