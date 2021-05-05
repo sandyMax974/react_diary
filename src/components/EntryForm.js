@@ -15,12 +15,10 @@ const EntryForm = ({ onSave }) => {
       alert('Please add some content')
       return
     }
-
+    
     onSave({ date, text })
-
     setText('')
   }
-
 
   return (
     <div>
