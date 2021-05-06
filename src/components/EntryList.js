@@ -9,21 +9,17 @@ const EntryList = ({ entries }) => {
           <Header as="h1">Entries</Header>
           <Divider />
 
-          <Segment>
-            {entries.map((entry, index) => {
-              return (
-                <Segment.Group>
-                  <Segment>
-                    <div key={index}>
-                      {entry.date}
-                      <br />
-                      {entry.text}
-                    </div>
-                  </Segment>
-                </Segment.Group>
-              );
-            })}
-          </Segment>
+          {entries.map((entry) => {
+            return (
+              <Segment.Group key={entry.id}>
+                <Segment>
+                  {entry.date}
+                  <br />
+                  {entry.text}
+                </Segment>
+              </Segment.Group>
+            );
+          })}
         </Grid.Column>
       </Grid.Row>
     </Container>

@@ -39,6 +39,7 @@ const EntryForm = ({ onSave }) => {
     }
 
     onSave({ date, text });
+
     setText("");
   };
 
@@ -47,11 +48,13 @@ const EntryForm = ({ onSave }) => {
       <Grid.Row>
         <Grid.Column>
           <Message>
-            <Header as="h3">
-              {formattedDate} - {formattedTime}
-            </Header>
-
             <Segment basic>
+              <Header as="h3">
+                {formattedDate} - {formattedTime}
+              </Header>
+
+              <Divider />
+
               <Form onSubmit={onSubmit}>
                 <TextArea
                   style={{ minHeight: 100 }}
@@ -60,7 +63,9 @@ const EntryForm = ({ onSave }) => {
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                 />
+
                 <Divider hidden />
+
                 <Input type="button">
                   <Button primary type="submit">
                     Save
