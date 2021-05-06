@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Page from "./components/Page";
 
 function App() {
+  let user = "Sandy";
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
@@ -23,14 +24,21 @@ function App() {
     return data;
   };
 
-  let user = "Sandy";
+  const addEntry = async (entry) => {
+    const newEntry = { ...entry };
+    // console.log("newEntry:", newEntry);
 
-  const addEntry = (entry) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
-    const newEntry = { id, ...entry };
-    console.log("newEntry:", newEntry);
-    setEntries([...entries, newEntry]);
-    console.log("entries:", entries);
+    const res = await fetch("http://localhost:5000/entries", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newEntry),
+    });
+    const data = await res.json();
+    // console.log(data);
+    setEntries([...entries, data]);
+    // console.log("entries:", entries);
   };
 
   return (
