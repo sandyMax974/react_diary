@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const getEntries = async () => {
       const entriesFromServer = await fetchEntries();
-      console.log(entriesFromServer);
+      // console.log(entriesFromServer);
       setEntries(entriesFromServer);
     };
     getEntries();
@@ -24,16 +24,22 @@ function App() {
     return data;
   };
 
-  const addEntry = async (entry) => {
-    const newEntry = { ...entry };
-    // console.log("newEntry:", newEntry);
+  const fetchEntry = async (id) => {
+    const res = await fetch(`http://localhost:5000/entries/${id}`);
+    const data = await res.json();
+    // console.log(data);
+    return data;
+  };
 
+  const addEntry = async (entry) => {
+    // const newEntry = { ...entry };
+    // console.log("newEntry:", newEntry);
     const res = await fetch("http://localhost:5000/entries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newEntry),
+      body: JSON.stringify(entry),
     });
     const data = await res.json();
     // console.log(data);

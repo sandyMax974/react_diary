@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Header, Divider, Segment, Container } from "semantic-ui-react";
+import { Grid, Header, Divider, Container } from "semantic-ui-react";
+import Entry from "./Entry";
 
 const EntryList = ({ entries }) => {
   return (
@@ -8,17 +9,8 @@ const EntryList = ({ entries }) => {
         <Grid.Column>
           <Header as="h1">Entries</Header>
           <Divider />
-
           {entries.map((entry) => {
-            return (
-              <Segment.Group key={entry.id}>
-                <Segment>
-                  {entry.date}
-                  <br />
-                  {entry.text}
-                </Segment>
-              </Segment.Group>
-            );
+            return <Entry entry={entry} />;
           })}
         </Grid.Column>
       </Grid.Row>
