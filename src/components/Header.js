@@ -1,13 +1,22 @@
-import React from 'react'
-import NewButton from './NewButton'
+import React from "react";
+import { Menu, Container, Icon } from "semantic-ui-react";
+import AddButton from "./AddButton";
 
 const Header = ({ user }) => {
   return (
-    <header style={{ margin: '0 0 10px 0', backgroundColor: 'steelblue' }}>
-      <h1>{user.toUpperCase()}'S DIARY</h1>
-      <NewButton />
-    </header>
-  )
-}
+    <Menu fixed="top" inverted>
+      <Container>
+        <Menu.Item as="a" header>
+          <Icon size="large" name="pencil" style={{ marginRight: "1em" }} />
+          {user.toUpperCase()}'S DIARY
+        </Menu.Item>
 
-export default Header
+        <Menu.Item position="right">
+          <AddButton />
+        </Menu.Item>
+      </Container>
+    </Menu>
+  );
+};
+
+export default Header;

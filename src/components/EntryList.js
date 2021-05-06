@@ -1,22 +1,33 @@
-import React from 'react'
+import React from "react";
+import { Grid, Header, Divider, Segment, Container } from "semantic-ui-react";
 
 const EntryList = ({ entries }) => {
   return (
-    <div style={{
-        border: 'solid steelblue', 
-        marginTop: '20px', 
-      }}>
-        
-      {entries.map((entry, index) => { 
-        return (
-          <div key={index} style={{margin: '10px', border: 'solid black 1px'}}>
-            <p>{entry.date}</p>
-            <h4>{entry.text}</h4> 
-          </div>
-        )
-      })}
-    </div>
-  )
-}
+    <Container>
+      <Grid.Row>
+        <Grid.Column>
+          <Header as="h1">Entries</Header>
+          <Divider />
 
-export default EntryList
+          <Segment>
+            {entries.map((entry, index) => {
+              return (
+                <Segment.Group>
+                  <Segment>
+                    <div key={index}>
+                      {entry.date}
+                      <br />
+                      {entry.text}
+                    </div>
+                  </Segment>
+                </Segment.Group>
+              );
+            })}
+          </Segment>
+        </Grid.Column>
+      </Grid.Row>
+    </Container>
+  );
+};
+
+export default EntryList;
