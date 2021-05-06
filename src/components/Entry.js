@@ -1,8 +1,9 @@
 import React from "react";
-import { Segment } from "semantic-ui-react";
+import { Segment, Button } from "semantic-ui-react";
+import DeleteEntry from "./DeleteEntry";
 import ViewEntry from "./ViewEntry";
 
-const Entry = ({ entry }) => {
+const Entry = ({ entry, onDelete }) => {
   return (
     <Segment.Group key={entry.id}>
       <Segment>
@@ -10,7 +11,12 @@ const Entry = ({ entry }) => {
         <br />
         {entry.text}
       </Segment>
-      <ViewEntry entry={entry} />
+      <Button.Group
+        buttons={[
+          <ViewEntry entry={entry} />,
+          <DeleteEntry entry={entry} onDelete={onDelete} />,
+        ]}
+      />
     </Segment.Group>
   );
 };

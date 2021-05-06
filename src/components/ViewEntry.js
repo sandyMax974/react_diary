@@ -20,8 +20,9 @@ const ViewEntry = ({ entry }) => {
   const { open, size } = state;
 
   return (
-    <div style={{ margin: "5px" }}>
+    <>
       <Button
+        style={{ margin: "5px" }}
         icon="eye"
         size="small"
         onClick={() => dispatch({ type: "open", size: "fullscreen" })}
@@ -37,11 +38,12 @@ const ViewEntry = ({ entry }) => {
           <br />
           {entry.text}
         </Modal.Content>
+
         <Modal.Actions>
           <Button onClick={() => dispatch({ type: "close" })}>Back</Button>
         </Modal.Actions>
       </Modal>
-    </div>
+    </>
   );
 };
 

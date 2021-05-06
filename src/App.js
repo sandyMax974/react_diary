@@ -47,11 +47,15 @@ function App() {
     // console.log("entries:", entries);
   };
 
+  const deleteEntry = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="App">
       <Header user={user} />
       <Divider hidden style={{ marginBottom: "5%" }} />
-      <Page onSave={addEntry} entries={entries} />
+      <Page onSave={addEntry} entries={entries} onDelete={deleteEntry} />
     </div>
   );
 }
