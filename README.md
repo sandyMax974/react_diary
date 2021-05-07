@@ -13,3 +13,18 @@ App
         |___ Edit
         |___ View
 ```
+
+## How to install
+```
+$ git clone git@github.com:sandyMax974/react_diary.git
+$ cd react_diary
+$ npm install
+```
+## How to run
+```
+// starts the json-server on port 5000
+$ npm run server 
+
+// starts the react application on port 3000
+$npm start
+```
