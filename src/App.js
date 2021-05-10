@@ -47,8 +47,12 @@ function App() {
     // console.log("entries:", entries);
   };
 
-  const deleteEntry = (id) => {
-    console.log(id);
+  const deleteEntry = async (id) => {
+    // console.log(id);
+    const res = await fetch(`http://localhost:5000/entries/${id}`, {
+      method: "DELETE",
+    });
+    setEntries(entries.filter((entry) => entry.id !== id));
   };
 
   return (
