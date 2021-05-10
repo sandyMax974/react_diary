@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { Modal, Button, Image, Icon } from "semantic-ui-react";
+import { Modal, Button, Icon } from "semantic-ui-react";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -22,7 +22,7 @@ const ViewEntry = ({ entry }) => {
   return (
     <>
       <Button
-        style={{ margin: "5px" }}
+        style={{ margin: "5px 0 5px 0" }}
         icon="eye"
         size="small"
         onClick={() => dispatch({ type: "open", size: "fullscreen" })}

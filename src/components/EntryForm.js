@@ -13,20 +13,20 @@ import {
 } from "semantic-ui-react";
 
 const EntryForm = ({ onSave }) => {
-  const today = new Date();
-  const formattedDate = today.toDateString();
-  const formattedTime = today.toLocaleTimeString("en-GB", {
+  const timestamp = new Date();
+  const options = {
+    weekday: "short",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const date = timestamp.toLocaleDateString("en-GB", options);
+  const time = timestamp.toLocaleTimeString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
   });
-  const date =
-    today.getDay() +
-    "-" +
-    today.getMonth() +
-    "-" +
-    today.getFullYear() +
-    " " +
-    formattedTime;
+
+  const created = `${date}  ${time}`;
 
   const [text, setText] = useState("");
 
@@ -38,7 +38,7 @@ const EntryForm = ({ onSave }) => {
       return;
     }
 
-    onSave({ date, text });
+    onSave({ created, text, timestamp });
 
     setText("");
   };
@@ -50,7 +50,7 @@ const EntryForm = ({ onSave }) => {
           <Message>
             <Segment basic>
               <Header as="h3">
-                {formattedDate} - {formattedTime}
+                {date} - {time}
               </Header>
 
               <Divider />
@@ -58,8 +58,6 @@ const EntryForm = ({ onSave }) => {
               <Form onSubmit={onSubmit}>
                 <TextArea
                   style={{ minHeight: 100 }}
-                  id="entry_text"
-                  name="entry_text"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                 />

@@ -13,7 +13,9 @@ const DeleteEntry = ({ entry, onDelete }) => {
     <Modal
       closeIcon
       open={open}
-      trigger={<Button icon="trash" size="small" style={{ margin: "5px" }} />}
+      trigger={
+        <Button icon="trash" size="small" style={{ margin: "5px 0 5px 0" }} />
+      }
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
     >
