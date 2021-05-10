@@ -14,20 +14,19 @@ import {
 
 const EntryForm = ({ onSave }) => {
   const timestamp = new Date();
-  const formattedDate = timestamp.toDateString();
-  const formattedTime = timestamp.toLocaleTimeString("en-GB", {
+  const options = {
+    weekday: "short",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const date = timestamp.toLocaleDateString("en-GB", options);
+  const time = timestamp.toLocaleTimeString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
   });
 
-  const date =
-    timestamp.getDay() +
-    "-" +
-    timestamp.getMonth() +
-    "-" +
-    timestamp.getFullYear() +
-    " " +
-    formattedTime;
+  const created = `${date}  ${time}`;
 
   const [text, setText] = useState("");
 
@@ -39,7 +38,7 @@ const EntryForm = ({ onSave }) => {
       return;
     }
 
-    onSave({ date, text, timestamp });
+    onSave({ created, text, timestamp });
 
     setText("");
   };
@@ -51,7 +50,7 @@ const EntryForm = ({ onSave }) => {
           <Message>
             <Segment basic>
               <Header as="h3">
-                {formattedDate} - {formattedTime}
+                {date} - {time}
               </Header>
 
               <Divider />
