@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Header, Divider, Container } from "semantic-ui-react";
 import Entry from "./Entry";
 
-const EntryList = ({ entries, onDelete }) => {
+const EntryList = ({ entries, onDelete, onModalOpen, onUpdate }) => {
   return (
     <Container>
       <Grid.Row>
@@ -10,7 +10,14 @@ const EntryList = ({ entries, onDelete }) => {
           <Header as="h1">Entries</Header>
           <Divider />
           {entries.map((entry) => {
-            return <Entry entry={entry} onDelete={onDelete} />;
+            return (
+              <Entry
+                entry={entry}
+                onDelete={onDelete}
+                onModalOpen={onModalOpen}
+                onUpdate={onUpdate}
+              />
+            );
           })}
         </Grid.Column>
       </Grid.Row>

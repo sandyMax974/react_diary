@@ -55,11 +55,40 @@ function App() {
     setEntries(entries.filter((entry) => entry.id !== id));
   };
 
+  const updateEntry = async (entry) => {
+    const id = entry.id;
+    const text = entry.text;
+    const entryToUpdate = await fetchEntry(id);
+
+    const updatedEntry = { ...entryToUpdate, text: text };
+
+    const res = await fetch(`http://localhost:5000/entries/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedEntry),
+    });
+    const data = await res.json();
+
+    setEntries(
+      entries.map((entry) =>
+        entry.id === id ? { ...entry, text: data.text } : entry
+      )
+    );
+  };
+
   return (
     <div className="App">
       <Header user={user} />
       <Divider hidden style={{ marginBottom: "5%" }} />
-      <Page onSave={addEntry} entries={entries} onDelete={deleteEntry} />
+      <Page
+        onSave={addEntry}
+        entries={entries}
+        onDelete={deleteEntry}
+        onModalOpen={fetchEntry}
+        onUpdate={updateEntry}
+      />
     </div>
   );
 }
