@@ -1,19 +1,28 @@
 {
   "entries": [
     {
-      "date": "4-4-2021 22:18",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur quam magna. Quisque vel tellus elementum sem ultrices condimentum ut a libero. Integer dictum cursus urna. Mauris dignissim lorem non accumsan rutrum.",
-      "id": 7
+      "date": "1-4-2021 14:35",
+      "text": "timestamp test ",
+      "timestamp": "2021-05-10T13:35:39.506Z",
+      "id": 10
     },
     {
-      "date": "1-4-2021 12:38",
-      "text": "this is another entry for test purposes\nnow I'm updatng\nI'm updating again",
-      "id": 8
+      "date": "1-4-2021 14:36",
+      "text": "timestamp test 2",
+      "timestamp": "2021-05-10T13:36:24.346Z",
+      "id": 11
     },
     {
-      "date": "1-4-2021 12:40",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae fringilla neque. Etiam vitae urna at dui suscipit tristique. Duis neque sapien, ultrices vitae diam non, pulvinar fringilla leo. Maecenas ut consectetur metus. Fusce feugiat eros non ex finibus, faucibus maximus risus ullamcorper. Maecenas a risus nisi. Quisque ac vehicula dolor. Ut sed vestibulum massa, eu condimentum nibh. Fusce sit amet aliquam lorem, nec elementum risus. Vestibulum in aliquam est. Etiam tellus neque, efficitur vitae sodales quis, pretium ac metus. Quisque vel tellus pharetra, convallis ligula et, faucibus lorem. Nunc sed ultrices nisi, sed aliquet quam. Donec tortor ante, faucibus mollis mi vitae, mollis dapibus erat.",
-      "id": 9
+      "date": "1-4-2021 14:36",
+      "text": "timestamp test 3",
+      "timestamp": "2021-05-10T13:36:36.646Z",
+      "id": 12
+    },
+    {
+      "date": "1-4-2021 14:36",
+      "text": "timestamp test 4",
+      "timestamp": "2021-05-10T13:36:41.031Z",
+      "id": 13
     }
   ]
 }
