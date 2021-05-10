@@ -5,12 +5,15 @@ import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
 const Entry = ({ entry, onDelete, getEntry, onUpdate }) => {
+  const wordCount = entry.text.split(" ").length;
+  const truncatedText = entry.text.split(" ").slice(0, 100).join(" ");
+
   return (
     <Segment.Group key={entry.id}>
       <Segment>
         <Header sub content={entry.created} />
         <Segment>
-          <p>{entry.text}</p>
+          <p>{wordCount < 100 ? entry.text : truncatedText + "..."}</p>
         </Segment>
       </Segment>
       <Button.Group
