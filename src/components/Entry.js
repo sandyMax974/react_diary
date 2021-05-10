@@ -4,12 +4,12 @@ import DeleteEntry from "./DeleteEntry";
 import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
-const Entry = ({ entry, onDelete, getEntry, onUpdate }) => {
+const Entry = ({ entry, onDelete, getEntry, onUpdate, index }) => {
   const wordCount = entry.text.split(" ").length;
   const truncatedText = entry.text.split(" ").slice(0, 100).join(" ");
 
   return (
-    <Segment.Group key={entry.id}>
+    <Segment.Group>
       <Segment>
         <Header sub content={entry.created} />
         <Segment>
@@ -19,9 +19,18 @@ const Entry = ({ entry, onDelete, getEntry, onUpdate }) => {
       <Button.Group
         style={{ padding: "0 5px 5px 14px" }}
         buttons={[
-          <ViewEntry entry={entry} />,
-          <UpdateEntry entry={entry} getEntry={getEntry} onUpdate={onUpdate} />,
-          <DeleteEntry entry={entry} onDelete={onDelete} />,
+          <ViewEntry key={`view-${index}`} entry={entry} />,
+          <UpdateEntry
+            key={`update-${index}`}
+            entry={entry}
+            getEntry={getEntry}
+            onUpdate={onUpdate}
+          />,
+          <DeleteEntry
+            key={`delete-${index}`}
+            entry={entry}
+            onDelete={onDelete}
+          />,
         ]}
       />
     </Segment.Group>

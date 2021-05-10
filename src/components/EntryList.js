@@ -16,14 +16,17 @@ const EntryList = ({ entries, onDelete, getEntry, onUpdate }) => {
         <Grid.Column>
           <Header as="h2">Entries</Header>
           <Divider />
-          {descendingOrder.map((entry) => {
+          {descendingOrder.map((entry, index) => {
             return (
-              <Entry
-                entry={entry}
-                onDelete={onDelete}
-                getEntry={getEntry}
-                onUpdate={onUpdate}
-              />
+              <div key={index.toString()}>
+                <Entry
+                  index={index}
+                  entry={entry}
+                  onDelete={onDelete}
+                  getEntry={getEntry}
+                  onUpdate={onUpdate}
+                />
+              </div>
             );
           })}
         </Grid.Column>
