@@ -86,7 +86,7 @@ function App() {
         onSave={addEntry}
         entries={entries}
         onDelete={deleteEntry}
-        onModalOpen={fetchEntry}
+        getEntry={fetchEntry}
         onUpdate={updateEntry}
       />
     </div>

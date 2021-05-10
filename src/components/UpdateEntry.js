@@ -8,13 +8,13 @@ import {
   Input,
 } from "semantic-ui-react";
 
-const UpdateEntry = ({ entry, onModalOpen, onUpdate }) => {
+const UpdateEntry = ({ entry, getEntry, onUpdate }) => {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
 
   const onOpen = async (id) => {
     setOpen(true);
-    const entryData = await onModalOpen(id);
+    const entryData = await getEntry(id);
     // console.log(entryData);
     setText(entryData.text);
   };
