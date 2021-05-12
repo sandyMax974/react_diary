@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  Modal,
-  Button,
-  Form,
-  TextArea,
-  Header,
-  Input,
-} from "semantic-ui-react";
+import { Modal, Button, Form, Header, Input } from "semantic-ui-react";
+import { Editor } from "@tinymce/tinymce-react";
 
 const UpdateEntry = ({ entry, onUpdate }) => {
   const [open, setOpen] = useState(false);
@@ -42,10 +36,13 @@ const UpdateEntry = ({ entry, onUpdate }) => {
         />
         <Modal.Content>
           <Modal.Description>
-            <TextArea
-              style={{ minHeight: 200 }}
+            <Editor
               value={text}
-              onChange={(e) => setText(e.target.value)}
+              init={{
+                height: 200,
+                menubar: false,
+              }}
+              onEditorChange={(e) => setText(e)}
             />
           </Modal.Description>
         </Modal.Content>

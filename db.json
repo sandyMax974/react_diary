@@ -7,17 +7,23 @@
       "id": 16
     },
     {
-      "created": "Mon, 10 May 2021  19:25",
-      "text": "The Legion’s emergence had forever changed night elven society. Under the leadership of Tyrande Whisperwind and Malfurion Stormrage, they cultivated a peaceful civilization, and shunned the use of arcane magic, which had attracted the Legion to Azeroth.\n\nBut the night elves’ tranquility was shattered anew when the Legion and its terrifying undead Scourge launched a new invasion of Azeroth in the modern times--a conflict known as the Third War. The Night Elves fought alongside the Horde and Alliance to defeat the Legion, but their victory was only made possible through an explosion that damaged the blessed World Tree, which had long granted the night elves immortality and protection from aging and disease.\n\nAgainst Malfurion’s warnings, renegade druids created a new World Tree in hopes of restoring the night elves’ immortality. But this new World Tree eventually became tainted by a dark malady called the Emerald Nightmare, which the night elves were able to combat with Malfurion’s aid.\n\nAlthough the night elves still struggle to cope with the loss of immortality, the fate of Azeroth rests on their resilience and willingness to aid other races.",
-      "timestamp": "2021-05-10T18:25:40.994Z",
-      "id": 17
+      "created": "Wed, 12 May 2021  15:11",
+      "text": "<p>hello, this is <em>a test</em> with the integrated <strong>editor</strong></p>\n<p><strong>next line!</strong></p>",
+      "timestamp": "2021-05-12T14:11:38.222Z",
+      "id": 19
     },
     {
-      "created": "Wed, 12 May 2021  10:48",
-      "text": "test entry this has been updated",
-      "timestamp": "2021-05-12T09:48:41.972Z",
-      "id": 18,
-      "updated": "2021-05-12T10:21:39.043Z"
+
+      "created": "Wed, 12 May 2021  15:19",
+      "text": "<h2 >Worgen History</h2>\n<p>Long ago, amid a brutal war between the night elves and the demonic satyrs in Kalimdor, a group of druids practiced the ability to transform into a powerful yet unwieldy form that embodied the fury of the wolf Ancient, Goldrinn. Taught by Ralaar Fangfire, these Druids of the Pack sought to use the Scythe of Elune, a mystical artifact, to temper the uncontrollable rage inherent in their chosen form.</p>",
+      "timestamp": "2021-05-12T14:19:52.645Z",
+      "id": 20
+    },
+    {
+      "created": "Wed, 12 May 2021  15:27",
+      "text": "<p>A boy fights... for \"the right death.\"Hardship, regret, shame: the negative feelings that humans feel become Curses that lurk in our everyday lives. The Curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. <strong>What's more</strong>, the Curses can only be exorcised by another Curse.</p>",
+      "timestamp": "2021-05-12T14:27:14.797Z",
+      "id": 22
     }
   ]
 }

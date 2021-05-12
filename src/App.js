@@ -6,6 +6,7 @@ import Page from "./components/Page";
 
 function App() {
   let user = "Sandy";
+  const [showAddForm, setShowAddForm] = useState(false);
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
@@ -20,20 +21,16 @@ function App() {
   const fetchEntries = async () => {
     const res = await fetch("http://localhost:5000/entries");
     const data = await res.json();
-    // console.log(data);
     return data;
   };
 
   const fetchEntry = async (id) => {
     const res = await fetch(`http://localhost:5000/entries/${id}`);
     const data = await res.json();
-    // console.log(data);
     return data;
   };
 
   const addEntry = async (entry) => {
-    // const newEntry = { ...entry };
-    // console.log("newEntry:", newEntry);
     const res = await fetch("http://localhost:5000/entries", {
       method: "POST",
       headers: {
@@ -42,14 +39,11 @@ function App() {
       body: JSON.stringify(entry),
     });
     const data = await res.json();
-    // console.log(data);
     setEntries([...entries, data]);
-    // console.log("entries:", entries);
   };
 
   const deleteEntry = async (id) => {
-    // console.log(id);
-    const res = await fetch(`http://localhost:5000/entries/${id}`, {
+    await fetch(`http://localhost:5000/entries/${id}`, {
       method: "DELETE",
     });
     setEntries(entries.filter((entry) => entry.id !== id));
@@ -81,9 +75,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header user={user} />
+      <Header user={user} showAddForm={showAddForm} onAdd={setShowAddForm} />
       <Divider hidden style={{ marginBottom: "5%" }} />
       <Page
+        showAddForm={showAddForm}
         onSave={addEntry}
         entries={entries}
         onDelete={deleteEntry}

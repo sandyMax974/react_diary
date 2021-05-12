@@ -3,10 +3,17 @@ import EntryList from "./EntryList";
 import EntryForm from "./EntryForm";
 import { Divider } from "semantic-ui-react";
 
-const Page = ({ onSave, onDelete, entries, getEntry, onUpdate }) => {
+const Page = ({
+  onSave,
+  onDelete,
+  entries,
+  getEntry,
+  onUpdate,
+  showAddForm,
+}) => {
   return (
     <div>
-      <EntryForm onSave={onSave} />
+      {showAddForm && <EntryForm onSave={onSave} />}
       <Divider hidden />
       <EntryList
         entries={entries}
