@@ -7,6 +7,7 @@ import {
   Header,
   Input,
 } from "semantic-ui-react";
+import { Editor } from "@tinymce/tinymce-react";
 
 const UpdateEntry = ({ entry, getEntry, onUpdate }) => {
   const [open, setOpen] = useState(false);
@@ -44,10 +45,18 @@ const UpdateEntry = ({ entry, getEntry, onUpdate }) => {
         />
         <Modal.Content>
           <Modal.Description>
-            <TextArea
+            {/* <TextArea
               style={{ minHeight: 200 }}
               value={text}
               onChange={(e) => setText(e.target.value)}
+            /> */}
+            <Editor
+              value={text}
+              init={{
+                height: 200,
+                menubar: false,
+              }}
+              onEditorChange={(e) => setText(e)}
             />
           </Modal.Description>
         </Modal.Content>
