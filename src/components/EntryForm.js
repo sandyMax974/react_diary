@@ -21,8 +21,8 @@ const EntryForm = ({ onSave }) => {
     month: "long",
     day: "numeric",
   };
-  const date = timestamp.toLocaleDateString("en-GB", options);
-  const time = timestamp.toLocaleTimeString("en-GB", {
+  const date = timestamp.toLocaleDateString(undefined, options);
+  const time = timestamp.toLocaleTimeString(undefined, {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -53,7 +53,6 @@ const EntryForm = ({ onSave }) => {
               <Header as="h3">
                 {date} - {time}
               </Header>
-
               <Divider />
               <form onSubmit={onSubmit}>
                 <Editor

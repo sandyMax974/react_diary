@@ -4,6 +4,7 @@ import DeleteEntry from "./DeleteEntry";
 import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
+
 const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
   // ---> this function needs to be moved to a helper.js
   const sanitize = (html) => {
@@ -27,7 +28,6 @@ const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
           <UpdateEntry
             key={`update-${keyId}`}
             entry={entry}
-            getEntry={getEntry}
             onUpdate={onUpdate}
           />,
           <DeleteEntry

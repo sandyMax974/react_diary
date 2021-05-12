@@ -52,9 +52,10 @@ function App() {
   const updateEntry = async (entry) => {
     const id = entry.id;
     const text = entry.text;
+    const updatedOn = entry.updatedOn;
     const entryToUpdate = await fetchEntry(id);
 
-    const updatedEntry = { ...entryToUpdate, text: text };
+    const updatedEntry = { ...entryToUpdate, text: text, updated: updatedOn };
 
     const res = await fetch(`http://localhost:5000/entries/${id}`, {
       method: "PUT",
