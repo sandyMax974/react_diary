@@ -4,9 +4,9 @@ import DeleteEntry from "./DeleteEntry";
 import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
-const Entry = ({ entry, onDelete, getEntry, onUpdate }) => {
+const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
   return (
-    <Segment.Group key={entry.id}>
+    <Segment.Group>
       <Segment>
         <Header sub content={entry.created} />
         <Segment>
@@ -16,9 +16,18 @@ const Entry = ({ entry, onDelete, getEntry, onUpdate }) => {
       <Button.Group
         style={{ padding: "0 5px 5px 14px" }}
         buttons={[
-          <ViewEntry entry={entry} />,
-          <UpdateEntry entry={entry} getEntry={getEntry} onUpdate={onUpdate} />,
-          <DeleteEntry entry={entry} onDelete={onDelete} />,
+          <ViewEntry key={`view-${keyId}`} entry={entry} />,
+          <UpdateEntry
+            key={`update-${keyId}`}
+            entry={entry}
+            getEntry={getEntry}
+            onUpdate={onUpdate}
+          />,
+          <DeleteEntry
+            key={`delete-${keyId}`}
+            entry={entry}
+            onDelete={onDelete}
+          />,
         ]}
       />
     </Segment.Group>

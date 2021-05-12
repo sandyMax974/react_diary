@@ -18,12 +18,15 @@ const EntryList = ({ entries, onDelete, getEntry, onUpdate }) => {
           <Divider />
           {descendingOrder.map((entry) => {
             return (
-              <Entry
-                entry={entry}
-                onDelete={onDelete}
-                getEntry={getEntry}
-                onUpdate={onUpdate}
-              />
+              <div key={entry.id} style={{ marginBottom: "10px" }}>
+                <Entry
+                  keyId={entry.id}
+                  entry={entry}
+                  onDelete={onDelete}
+                  getEntry={getEntry}
+                  onUpdate={onUpdate}
+                />
+              </div>
             );
           })}
         </Grid.Column>
