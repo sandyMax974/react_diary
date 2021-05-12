@@ -17,6 +17,12 @@
       "text": "test entry",
       "timestamp": "2021-05-12T09:48:41.972Z",
       "id": 18
+    },
+    {
+      "created": "Wed, 12 May 2021  15:11",
+      "text": "<p>hello, this is <em>a test</em> with the integrated <strong>editor</strong></p>\n<p><strong>next line!</strong></p>",
+      "timestamp": "2021-05-12T14:11:38.222Z",
+      "id": 19
     }
   ]
 }

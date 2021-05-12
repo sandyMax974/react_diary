@@ -11,8 +11,10 @@ import {
   Segment,
   Divider,
 } from "semantic-ui-react";
+import { Editor } from "@tinymce/tinymce-react";
 
 const EntryForm = ({ onSave }) => {
+  // ---> this section needs to be moved to its own component
   const timestamp = new Date();
   const options = {
     weekday: "short",
@@ -25,7 +27,7 @@ const EntryForm = ({ onSave }) => {
     hour: "2-digit",
     minute: "2-digit",
   });
-
+  // <---
   const created = `${date}  ${time}`;
 
   const [text, setText] = useState("");
@@ -54,22 +56,20 @@ const EntryForm = ({ onSave }) => {
               </Header>
 
               <Divider />
-
-              <Form onSubmit={onSubmit}>
-                <TextArea
-                  style={{ minHeight: 100 }}
+              <form onSubmit={onSubmit}>
+                <Editor
                   value={text}
-                  onChange={(e) => setText(e.target.value)}
+                  init={{
+                    height: 200,
+                    menubar: false,
+                  }}
+                  onEditorChange={(e) => setText(e)}
                 />
-
-                <Divider hidden />
-
+                <br />
                 <Input type="button">
-                  <Button primary type="submit">
-                    Save
-                  </Button>
+                  <Button primary type="Submit" content="Save" />
                 </Input>
-              </Form>
+              </form>
             </Segment>
           </Message>
         </Grid.Column>
