@@ -4,7 +4,7 @@ import DeleteEntry from "./DeleteEntry";
 import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
-const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
+const Entry = ({ entry, onDelete, onUpdate, keyId }) => {
   return (
     <Segment.Group>
       <Segment>
@@ -20,7 +20,6 @@ const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
           <UpdateEntry
             key={`update-${keyId}`}
             entry={entry}
-            getEntry={getEntry}
             onUpdate={onUpdate}
           />,
           <DeleteEntry

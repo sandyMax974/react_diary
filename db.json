@@ -14,9 +14,10 @@
     },
     {
       "created": "Wed, 12 May 2021  10:48",
-      "text": "test entry",
+      "text": "test entry this has been updated",
       "timestamp": "2021-05-12T09:48:41.972Z",
-      "id": 18
+      "id": 18,
+      "updated": "2021-05-12T10:21:39.043Z"
     }
   ]
 }
