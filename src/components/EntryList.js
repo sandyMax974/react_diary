@@ -18,9 +18,9 @@ const EntryList = ({ entries, onDelete, getEntry, onUpdate }) => {
           <Divider />
           {descendingOrder.map((entry, index) => {
             return (
-              <div key={index.toString()}>
+              <div key={entry.id} style={{ marginBottom: "10px" }}>
                 <Entry
-                  index={index}
+                  keyId={entry.id}
                   entry={entry}
                   onDelete={onDelete}
                   getEntry={getEntry}

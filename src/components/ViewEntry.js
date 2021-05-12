@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { Modal, Button, Icon, Header } from "semantic-ui-react";
+import Duration from "./Duration";
+import { Modal, Button, Icon, Header, Label } from "semantic-ui-react";
 
 const ViewEntry = ({ entry }) => {
   const [open, setOpen] = useState(false);
+  const updatedTimestamp = Date.parse(entry.updated);
+  const now = Date.now();
+  const duration = updatedTimestamp - now;
+
 
   return (
     <Modal
@@ -13,7 +18,14 @@ const ViewEntry = ({ entry }) => {
         <Button style={{ margin: "5px 0 5px 0" }} icon="eye" size="small" />
       }
     >
-      <Header content={entry.created} />
+      <Header>{entry.created}</Header>
+      <span>
+        {entry.updated && (
+          <Label attached="top right">
+            <Duration duration={duration} />
+          </Label>
+        )}
+      </span>
       <Modal.Content>
         <Modal.Description>
           <p>{entry.text}</p>
