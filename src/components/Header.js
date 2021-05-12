@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Container, Icon } from "semantic-ui-react";
 import AddButton from "./AddButton";
 
-const Header = ({ user }) => {
+const Header = ({ user, showAddForm, onAdd }) => {
   return (
     <Menu fixed="top" inverted>
       <Container>
@@ -12,7 +12,7 @@ const Header = ({ user }) => {
         </Menu.Item>
 
         <Menu.Item position="right">
-          <AddButton />
+          <AddButton showAddForm={showAddForm} onAdd={onAdd} />
         </Menu.Item>
       </Container>
     </Menu>
