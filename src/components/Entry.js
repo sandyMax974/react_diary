@@ -5,12 +5,19 @@ import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
 const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
+  // ---> this function needs to be moved to a helper.js
+  const sanitize = (html) => {
+    var doc = document.createElement("div");
+    doc.innerHTML = html;
+    return doc.innerHTML;
+  };
+  // <---
   return (
     <Segment.Group>
       <Segment>
         <Header sub content={entry.created} />
         <Segment>
-          <p>{entry.text}</p>
+          <div dangerouslySetInnerHTML={{ __html: sanitize(entry.text) }}></div>
         </Segment>
       </Segment>
       <Button.Group
