@@ -14,9 +14,9 @@ const EntryList = ({ entries, onDelete, getEntry, onUpdate }) => {
     <Container>
       <Grid.Row>
         <Grid.Column>
-          <Header as="h1">Entries</Header>
+          <Header as="h2">Entries</Header>
           <Divider />
-          {descendingOrder.map((entry) => {
+          {descendingOrder.map((entry, index) => {
             return (
               <div key={entry.id} style={{ marginBottom: "10px" }}>
                 <Entry
