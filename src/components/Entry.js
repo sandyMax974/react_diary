@@ -4,10 +4,10 @@ import DeleteEntry from "./DeleteEntry";
 import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
-// const wordCount = entry.text.split(" ").length;
-// const truncatedText = entry.text.split(" ").slice(0, 100).join(" ");
+const Entry = ({ entry, onDelete, onUpdate, keyId }) => {
+  const wordCount = entry.text.split(" ").length;
+  const truncatedText = entry.text.split(" ").slice(0, 100).join(" ");
 
-const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
   // ---> this function needs to be moved to a helper.js
   const sanitize = (html) => {
     var doc = document.createElement("div");
@@ -21,8 +21,19 @@ const Entry = ({ entry, onDelete, getEntry, onUpdate, keyId }) => {
       <Segment>
         <Header sub content={entry.created} />
         <Segment>
-          {/* <p>{wordCount < 100 ? entry.text : truncatedText + "..."}</p> */}
-          <div dangerouslySetInnerHTML={{ __html: sanitize(entry.text) }}></div>
+          {wordCount < 100 ? (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: sanitize(entry.text),
+              }}
+            ></div>
+          ) : (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: sanitize(truncatedText + "..."),
+              }}
+            ></div>
+          )}
         </Segment>
       </Segment>
       <Button.Group
