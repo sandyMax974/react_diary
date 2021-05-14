@@ -8,7 +8,6 @@ const ViewEntry = ({ entry }) => {
   const now = Date.now();
   const duration = updatedTimestamp - now;
 
-
   return (
     <Modal
       open={open}

@@ -1,0 +1,7 @@
+* raise pull request for bigger/more complex functionnality
+
+* Epic: Improvement - that include all the tasks related to improvement code
+
+	* Component/UpdateEntry.js - no need for getEntry
+
+	* Change country code for the .toLocalDateString (try US) (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) - FEATURE IMPROVMENT

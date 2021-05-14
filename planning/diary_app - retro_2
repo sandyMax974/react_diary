@@ -1,0 +1,14 @@
+Difficulties
+
+* Importing semantic-ui-react semantic-ui-css => it  would help visualising if I could apply a minimum of css
+
+* I've separated date&time and form component, however I need to pass date&time data when the form gets submitted, so I might need to re-order them. 
+=> can I pass data between components of the same level? (SORTED)
+
+
+Feedbacks
+
+* Page component => wrapper for other component (ease of change)
+* Preferred BE date format: YYYY-MM-DD z0000-000
+* FE American date: MM-DD-YYYY
+* Date component behaviour when updating => add update property to Entry

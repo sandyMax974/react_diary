@@ -1,0 +1,12 @@
+ISSUES
+
+* can get the ribbon label to align with header
+* https://www.npmjs.com/package/react-time-ago
+* duration - change name to lastUpdated
+* Editor - https://medium.com/building-a-simple-text-correction-tool/how-to-add-text-formatting-to-your-web-page-with-react-36db19d24b 
+* Conventional Git messaging - https://www.conventionalcommits.org/en/v1.0.0/
+
+
+BUGS: write JIRA tickets
+* last-updated label has disappeared
+* entry truncation to integrate with __html

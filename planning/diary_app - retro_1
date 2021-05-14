@@ -1,0 +1,55 @@
+
+**Tech Stack**
+REACT - 
+- Think about each component reusability
+- Use temp array with couples hard-coded entries
+
+
+**Identify MVP**
+Only one journal author
+Assets to be stored locally
+
+As a user
+In order to reflect on my days
+I want to be able to add entries in a diary
+
+As a user
+In order to focus on the content of my entry
+I want the date and time of the entry to be automatically recorded
+
+
+**Enhancement**
+Add multiple journal authors
+Cloud storage of assets
+
+As a user
+In order to have more fun when journaling
+I want to use a markdown editor when creating a new entry
+
+As a user
+In order to identify important entry straight away
+I want to be able to star my entries 
+
+As a user
+In order to navigate my entries more easily
+I want to be able to see all my diary entries ordered from newest to oldest
+
+As a user
+In order to navigate my diary more easily
+I want to be able to filter my diary entries by entry date
+
+As a stakeholder
+In order to not waste database memory
+I want each entry to have some text as a minimum requirement before saving
+
+As a stakeholder
+In order to keep my users' diary entries private
+I want a user to have to log in with a strong password
+
+As a user
+In order to enrich my diary's entries
+I want to be able to include audio, video, and pictures to each journal entry
+
+As a user
+In order to enrich my diary's entries
+I want to add location information and weather specific to the entries

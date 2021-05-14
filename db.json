@@ -13,17 +13,18 @@
       "id": 19
     },
     {
-
       "created": "Wed, 12 May 2021  15:19",
-      "text": "<h2 >Worgen History</h2>\n<p>Long ago, amid a brutal war between the night elves and the demonic satyrs in Kalimdor, a group of druids practiced the ability to transform into a powerful yet unwieldy form that embodied the fury of the wolf Ancient, Goldrinn. Taught by Ralaar Fangfire, these Druids of the Pack sought to use the Scythe of Elune, a mystical artifact, to temper the uncontrollable rage inherent in their chosen form.</p>",
+      "text": "<h3>Worgen History</h3>\n<p>Long ago, amid a brutal war between the night elves and the demonic satyrs in Kalimdor, a group of druids practiced the ability to transform into a powerful yet unwieldy form that embodied the fury of the wolf Ancient, Goldrinn. Taught by Ralaar Fangfire, these Druids of the Pack sought to use the Scythe of Elune, a mystical artifact, to temper the uncontrollable rage inherent in their chosen form.</p>\n<p>Long ago, amid a brutal war between the night elves and the demonic satyrs in Kalimdor, a group of druids practiced the ability to transform into a powerful yet unwieldy form that embodied the fury of the wolf Ancient, Goldrinn. Taught by Ralaar Fangfire, these Druids of the Pack sought to use the Scythe of Elune, a mystical artifact, to temper the uncontrollable rage inherent in their chosen form.</p>",
       "timestamp": "2021-05-12T14:19:52.645Z",
-      "id": 20
+      "id": 20,
+      "updated": "2021-05-14T08:54:43.272Z"
     },
     {
       "created": "Wed, 12 May 2021  15:27",
-      "text": "<p>A boy fights... for \"the right death.\"Hardship, regret, shame: the negative feelings that humans feel become Curses that lurk in our everyday lives. The Curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. <strong>What's more</strong>, the Curses can only be exorcised by another Curse.</p>",
+      "text": "<p>A boy fights... for \"the right death.\"Hardship, regret, shame: the negative feelings that humans feel become Curses that lurk in our everyday lives.</p>\n<p style=\"padding-left: 40px;\">The Curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. <strong>What's more</strong>, the Curses can only be exorcised by another Curse.</p>",
       "timestamp": "2021-05-12T14:27:14.797Z",
-      "id": 22
+      "id": 22,
+      "updated": "2021-05-12T19:00:24.077Z"
     }
   ]
 }
