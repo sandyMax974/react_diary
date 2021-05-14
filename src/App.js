@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     const getEntries = async () => {
       const entriesFromServer = await fetchEntries();
-      // console.log(entriesFromServer);
       setEntries(entriesFromServer);
     };
     getEntries();
