@@ -27,7 +27,11 @@ const ViewEntry = ({ entry }) => {
       </span>
       <Modal.Content>
         <Modal.Description>
-          <p>{entry.text}</p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: entry.text,
+            }}
+          ></div>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
