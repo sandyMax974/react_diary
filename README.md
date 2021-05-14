@@ -34,11 +34,11 @@ $npm start
 ## Planning
 
 ### Mock-ups
-![mock-up-1]()
+![mock-up-1](https://github.com/sandyMax974/react_diary/blob/main/planning/diary_app%20-%20mockup_1.png)
 
-![mock-up-2]()
+![mock-up-2](https://github.com/sandyMax974/react_diary/blob/main/planning/diary_app%20-%20mockup_2.jpg)
 
 ### Process
-![jira-board-1]()
+![jira-board-1](https://github.com/sandyMax974/react_diary/blob/main/planning/Jira%20Board%20-%201.png)
 
-![jira-board-2]()
+![jira-board-2](https://github.com/sandyMax974/react_diary/blob/main/planning/Jira%20Board%20-%202.png)
