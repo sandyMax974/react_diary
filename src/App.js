@@ -1,8 +1,8 @@
 import "./App.css";
 import { Divider } from "semantic-ui-react";
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Page from "./components/Page";
+import Header from "./containers/Header";
+import Page from "./containers/Page";
 
 function App() {
   let user = "Sandy";

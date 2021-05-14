@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu, Container, Icon } from "semantic-ui-react";
-import AddButton from "./AddButton";
+import AddButton from "../components/AddButton";
 
 const Header = ({ user, showAddForm, onAdd }) => {
   return (

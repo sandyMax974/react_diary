@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Header, Divider, Container } from "semantic-ui-react";
-import Entry from "./Entry";
+import Entry from "../components/Entry";
 
 const EntryList = ({ entries, onDelete, getEntry, onUpdate }) => {
   const descendingOrder = entries.sort((a, b) => {
@@ -16,7 +16,7 @@ const EntryList = ({ entries, onDelete, getEntry, onUpdate }) => {
         <Grid.Column>
           <Header as="h2">Entries</Header>
           <Divider />
-          {descendingOrder.map((entry, index) => {
+          {descendingOrder.map((entry) => {
             return (
               <div key={entry.id} style={{ marginBottom: "10px" }}>
                 <Entry

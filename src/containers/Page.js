@@ -1,6 +1,6 @@
 import React from "react";
 import EntryList from "./EntryList";
-import EntryForm from "./EntryForm";
+import EntryForm from "../components/EntryForm";
 import { Divider } from "semantic-ui-react";
 
 const Page = ({
