@@ -1,89 +1,32 @@
 import "./App.css";
-import { Divider } from "semantic-ui-react";
-import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
+import Diary from "./containers/Diary";
+import Login from "./containers/Login";
 import Header from "./containers/Header";
-import Page from "./containers/Page";
 
 function App() {
-  let user = "Sandy";
-  const [showAddForm, setShowAddForm] = useState(false);
-  const [entries, setEntries] = useState([]);
+  const [token, setToken] = useState();
 
-  useEffect(() => {
-    const getEntries = async () => {
-      const entriesFromServer = await fetchEntries();
-      setEntries(entriesFromServer);
-    };
-    getEntries();
-  }, []);
-
-  const fetchEntries = async () => {
-    const res = await fetch("http://localhost:5000/entries");
-    const data = await res.json();
-    return data;
-  };
-
-  const fetchEntry = async (id) => {
-    const res = await fetch(`http://localhost:5000/entries/${id}`);
-    const data = await res.json();
-    return data;
-  };
-
-  const addEntry = async (entry) => {
-    const res = await fetch("http://localhost:5000/entries", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(entry),
-    });
-    const data = await res.json();
-    setEntries([...entries, data]);
-  };
-
-  const deleteEntry = async (id) => {
-    await fetch(`http://localhost:5000/entries/${id}`, {
-      method: "DELETE",
-    });
-    setEntries(entries.filter((entry) => entry.id !== id));
-  };
-
-  const updateEntry = async (entry) => {
-    const id = entry.id;
-    const text = entry.text;
-    const updatedOn = entry.updatedOn;
-    const entryToUpdate = await fetchEntry(id);
-
-    const updatedEntry = { ...entryToUpdate, text: text, updated: updatedOn };
-
-    const res = await fetch(`http://localhost:5000/entries/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedEntry),
-    });
-    const data = await res.json();
-
-    setEntries(
-      entries.map((entry) =>
-        entry.id === id ? { ...entry, text: data.text } : entry
-      )
+  if (!token) {
+    return (
+      <div className="App">
+        <Header />
+        <Login setToken={setToken} />
+      </div>
     );
-  };
+  }
 
   return (
     <div className="App">
-      <Header user={user} showAddForm={showAddForm} onAdd={setShowAddForm} />
-      <Divider hidden style={{ marginBottom: "5%" }} />
-      <Page
-        showAddForm={showAddForm}
-        onSave={addEntry}
-        entries={entries}
-        onDelete={deleteEntry}
-        getEntry={fetchEntry}
-        onUpdate={updateEntry}
-      />
+      <h1>Public Access</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/diary">
+            <Diary />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
