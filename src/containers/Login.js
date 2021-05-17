@@ -8,8 +8,8 @@ const Login = () => {
         <Header as="h1">Log In</Header>
         <Form>
           <Form.Field>
-            <label>Email</label>
-            <input placeholder="Email" />
+            <label>Username</label>
+            <input placeholder="Username" />
           </Form.Field>
           <Form.Field>
             <label>Password</label>

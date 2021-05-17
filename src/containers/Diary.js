@@ -71,7 +71,7 @@ const Diary = () => {
   };
 
   return (
-    <>
+    <div style={{ marginTop: "5em" }}>
       <Header user={user} showAddForm={showAddForm} onAdd={setShowAddForm} />
       <Page
         showAddForm={showAddForm}
@@ -82,7 +82,7 @@ const Diary = () => {
         onUpdate={updateEntry}
       />
       ;
-    </>
+    </div>
   );
 };
 
