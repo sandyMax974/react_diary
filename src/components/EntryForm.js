@@ -54,7 +54,7 @@ const EntryForm = ({ onSave }) => {
                 {date} - {time}
               </Header>
               <Divider />
-              <form onSubmit={onSubmit}>
+              <Form onSubmit={onSubmit}>
                 <Editor
                   value={text}
                   init={{
@@ -67,7 +67,7 @@ const EntryForm = ({ onSave }) => {
                 <Input type="button">
                   <Button primary type="Submit" content="Save" />
                 </Input>
-              </form>
+              </Form>
             </Segment>
           </Message>
         </Grid.Column>

@@ -1,13 +1,6 @@
 {
   "entries": [
     {
-      "created": "Mon, 10 May 2021  15:55",
-      "text": "<p style=\"text-align: right;\">Denizens of a wondrous and fertile land, the pandaren once labored under the oppressive thumb of a monstrous race of ancient warlords known as the mogu. Through tenacity, diplomacy, and a unique form of unarmed combat, the pandaren staged a successful revolution that deposed the mogu and established a pandaren empire that would prosper for thousands of years.</p>\n<p>One of the most famous such wanderers was the brewmaster <em>Chen Stormstout</em>, who set out looking for exotic ingredients for his special ale and wound up an integral part of the founding of the Horde. During the bleak days that preceded the sundering of the world, when demons flooded onto <strong>Azeroth</strong> and threw the entirety of the mortal realm into jeopardy, the last Emperor of the pandaren discovered a way to protect his land from the devastation. His deal with fate shrouded his land within an impenetrable mist for ten thousand years, but the nature of his transaction has left Pandaria haunted ever since.</p>\n<p style=\"text-align: center;\">Now, while some pandaren align themselves with the Horde and others with the Alliance, they all venture out to heal the world beyond their homeland.</p>",
-      "timestamp": "2021-05-10T14:55:15.017Z",
-      "id": 16,
-      "updated": "2021-05-14T09:47:10.458Z"
-    },
-    {
       "created": "Wed, 12 May 2021  15:11",
       "text": "<p>hello, this is <em>a test</em> with the integrated <strong>editor</strong></p>\n<p><strong>next line!</strong></p>",
       "timestamp": "2021-05-12T14:11:38.222Z",
@@ -22,10 +15,10 @@
     },
     {
       "created": "Wed, 12 May 2021  15:27",
-      "text": "<p>A boy fights... for \"the right death.\"Hardship, regret, shame: the negative feelings that humans feel become Curses that lurk in our everyday lives.</p>\n<p style=\"padding-left: 40px;\">The Curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. <strong>What's more</strong>, the Curses can only be exorcised by another Curse.</p>",
+      "text": "<p>A boy fights... for \"the right death.\"Hardship, regret, shame: the negative feelings that humans feel become Curses that lurk in our everyday lives.</p>\n<p>The Curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. <strong>What's more</strong>, the Curses can only be exorcised by another Curse.</p>",
       "timestamp": "2021-05-12T14:27:14.797Z",
       "id": 22,
-      "updated": "2021-05-12T19:00:24.077Z"
+      "updated": "2021-05-27T11:23:35.324Z"
     }
   ]
 }

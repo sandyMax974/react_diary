@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import {
   Form,
   Button,
@@ -7,37 +7,27 @@ import {
   Header,
   Input,
 } from "semantic-ui-react";
-// import Form from "react-validation/build/form";
-// import Input from "react-validation/build/input";
-// import CheckButton from "react-validation/build/button";
 import AuthService from "../services/Auth.service";
 
-const Login = (props) => {
-  // const form = useRef();
-  // const checkbtn = useRef();
-
+const Registration = (props) => {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [successful, setSuccessful] = useState(false);
   const [message, setMessage] = useState("");
 
-  // const required = (value) => {
-  //   if (!value) {
-  //     alert("This field is required");
-  //   }
-  // };
-
-  const handleLogin = (e) => {
+  const handleRegistration = (e) => {
     e.preventDefault();
-    setMessage("");
-    setLoading(true);
-    // form.current.validateAll();
-    // console.log(form.current, checkbtn.current);
 
-    AuthService.login(username, password).then(
-      () => {
-        props.history.push("/diary");
-        window.location.reload();
+    setMessage("");
+    setSuccessful(false);
+
+    // form.current.validateAll();
+
+    AuthService.register(username, email, password).then(
+      (response) => {
+        setMessage(response.data.message);
+        setSuccessful(true);
       },
       (error) => {
         const resMessage =
@@ -46,10 +36,9 @@ const Login = (props) => {
             error.response.data.message) ||
           error.message ||
           error.toString();
-        console.log(error);
 
-        setLoading(false);
         setMessage(resMessage);
+        setSuccessful(false);
       }
     );
   };
@@ -57,14 +46,23 @@ const Login = (props) => {
   return (
     <Container style={{ marginTop: "10%" }}>
       <Segment size="small">
-        <Header as="h1">Log In</Header>
-        <Form onSubmit={handleLogin}>
+        <Header as="h1">Register</Header>
+        <Form onSubmit={handleRegistration}>
           <Form.Field>
             <Input
               type="text"
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              // validations={[required]}
+            />
+          </Form.Field>
+          <Form.Field>
+            <Input
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               // validations={[required]}
             />
           </Form.Field>
@@ -78,7 +76,7 @@ const Login = (props) => {
             />
           </Form.Field>
           <Input type="button">
-            <Button primary type="submit" content="Submit" />
+            <Button primary type="submit" content="Sign Up" />
           </Input>
         </Form>
       </Segment>
@@ -86,4 +84,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Registration;
