@@ -21,11 +21,13 @@ const Registration = (props) => {
 
     setMessage("");
     setSuccessful(false);
-
+    console.log("in registration...", username, email, password);
     // form.current.validateAll();
 
     AuthService.register(username, email, password).then(
       (response) => {
+        console.log("registration response");
+        console.log(response);
         setMessage(response.data.message);
         setSuccessful(true);
       },
