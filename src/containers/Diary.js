@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Page from "./Page";
+import AuthService from "../services/Auth.service";
 
 const Diary = () => {
-  let user = "Sandy";
   const [showAddForm, setShowAddForm] = useState(false);
   const [entries, setEntries] = useState([]);
+
+  const user = AuthService.getCurrentUser().username;
+  // console.log(user);
 
   useEffect(() => {
     const getEntries = async () => {

@@ -3,6 +3,7 @@ import { Menu, Container, Icon } from "semantic-ui-react";
 import AddButton from "../components/AddButton";
 
 const Header = ({ user, showAddForm, onAdd }) => {
+  // console.log(user);
   return (
     <Menu fixed="top" inverted>
       <Container>
