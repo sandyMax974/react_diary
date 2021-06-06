@@ -26,8 +26,8 @@ const Registration = (props) => {
 
     AuthService.register(username, email, password).then(
       (response) => {
-        console.log("registration response");
-        console.log(response);
+        // console.log("registration response");
+        // console.log(response);
         setMessage(response.data.message);
         setSuccessful(true);
       },

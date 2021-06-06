@@ -7,15 +7,9 @@ import {
   Header,
   Input,
 } from "semantic-ui-react";
-// import Form from "react-validation/build/form";
-// import Input from "react-validation/build/input";
-// import CheckButton from "react-validation/build/button";
 import AuthService from "../services/Auth.service";
 
 const Login = (props) => {
-  // const form = useRef();
-  // const checkbtn = useRef();
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -31,11 +25,13 @@ const Login = (props) => {
     e.preventDefault();
     setMessage("");
     setLoading(true);
-    // form.current.validateAll();
-    // console.log(form.current, checkbtn.current);
 
     AuthService.login(username, password).then(
-      () => {
+      (response) => {
+        if (response.data.accessToken) {
+          localStorage.setItem("user", JSON.stringify(response.data));
+        }
+        // console.log(response);
         props.history.push("/diary");
         window.location.reload();
       },
