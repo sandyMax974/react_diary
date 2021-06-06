@@ -43,6 +43,10 @@ const Registration = (props) => {
         setSuccessful(false);
       }
     );
+
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
