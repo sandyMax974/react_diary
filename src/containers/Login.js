@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import {
   Form,
   Button,
@@ -7,7 +7,9 @@ import {
   Header,
   Input,
 } from "semantic-ui-react";
+import { Link, Route } from "react-router-dom";
 import AuthService from "../services/Auth.service";
+// import { router } from "json-server";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -76,6 +78,7 @@ const Login = (props) => {
           <Input type="button">
             <Button primary type="submit" content="Submit" />
           </Input>
+          Don't have an account? Register <Link to="/registration">here</Link>
         </Form>
       </Segment>
     </Container>
