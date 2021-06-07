@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
 import Page from "./Page";
-import AuthService from "../services/Auth.service";
 
-const Diary = () => {
-  const [showAddForm, setShowAddForm] = useState(false);
+const Diary = ({ showAddForm }) => {
   const [entries, setEntries] = useState([]);
-
-  const user = AuthService.getCurrentUser().username;
-  // console.log(user);
 
   useEffect(() => {
     const getEntries = async () => {
@@ -75,7 +69,6 @@ const Diary = () => {
 
   return (
     <div style={{ marginTop: "5em" }}>
-      <Header user={user} showAddForm={showAddForm} onAdd={setShowAddForm} />
       <Page
         showAddForm={showAddForm}
         onSave={addEntry}
