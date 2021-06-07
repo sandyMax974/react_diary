@@ -11,7 +11,7 @@ const AddButton = ({ onAdd, showAddForm }) => {
       color={showAddForm ? "grey" : "blue"}
       icon={showAddForm ? "minus square" : "add square"}
       labelPosition="right"
-      content={showAddForm ? "Close" : "Add"}
+      content={showAddForm ? "Close" : "Add Entry"}
       onClick={(e) => openForm(e)}
     />
   );
