@@ -12,8 +12,8 @@ class DataService {
     });
   }
 
-  getAll() {
-    return axios.get(API_DATA_URL);
+  getAll(userId) {
+    return axios.get(API_DATA_URL, userId);
   }
 }
 

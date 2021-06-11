@@ -17,7 +17,9 @@ const create = async (req, res) => {
 
 const findAll = async (req, res) => {
   Entry.findAll({
-    userId: req.body.userId,
+    where: {
+      userId: req.body.userId,
+    },
   })
     .then((data) => res.send({ data }))
     .catch((err) => {
