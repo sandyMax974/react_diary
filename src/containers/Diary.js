@@ -9,7 +9,7 @@ const Diary = ({ showAddForm }) => {
   const userId = AuthService.getCurrentUser().userId;
 
   useEffect(() => {
-    const getEntries = async (userId) => {
+    const getEntries = async () => {
       const entriesFromDatabase = await DataService.getAll(userId);
       setEntries(entriesFromDatabase.data.data);
     };
