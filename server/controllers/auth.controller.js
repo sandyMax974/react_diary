@@ -1,13 +1,13 @@
 const db = require("../models");
 const config = require("../config/auth.config");
 const User = db.user;
-const Entry = db.entry;
+// const Entry = db.entry;
 
 const Op = db.Sequelize.Op;
 
 let jwt = require("jsonwebtoken");
 let bcrypt = require("bcryptjs");
-const user = require("../models/user");
+// const user = require("../models/user");
 
 const signup = async (req, res) => {
   User.create({

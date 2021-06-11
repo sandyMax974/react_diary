@@ -6,7 +6,8 @@ const db = require("../models");
 // lines 4-5 could be replaced by
 // const { user } = require("../models")
 // console.log(`db object is ${db.user}`);
-const route = require("../routes/auth.routes");
+const authRoute = require("../routes/auth.routes");
+const entryRoute = require("../routes/entry.routes");
 
 const app = express();
 
@@ -27,7 +28,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello world" });
 });
 
-route(app);
+authRoute(app);
+entryRoute(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

@@ -11,6 +11,7 @@ import {
   Divider,
 } from "semantic-ui-react";
 import { Editor } from "@tinymce/tinymce-react";
+import DataService from "../services/Data.service";
 
 const EntryForm = ({ onSave }) => {
   // ---> this section needs to be moved to its own component
@@ -39,7 +40,8 @@ const EntryForm = ({ onSave }) => {
       return;
     }
 
-    onSave({ created, text, timestamp });
+    // onSave({ created, text, timestamp });
+    DataService.create(created, text, timestamp);
 
     setText("");
   };
