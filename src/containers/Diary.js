@@ -25,15 +25,15 @@ const Diary = ({ showAddForm }) => {
   };
 
   const addEntry = async (entry) => {
-    const res = await fetch("http://localhost:5000/entries", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(entry),
-    });
-    const data = await res.json();
-    setEntries([...entries, data]);
+    // const res = await fetch("http://localhost:5000/entries", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(entry),
+    // });
+    // const data = await res.json();
+    // setEntries([...entries, data]);
   };
 
   const deleteEntry = async (id) => {

@@ -7,6 +7,7 @@ const create = async (req, res) => {
     text: req.body.text,
     created_timestamp: req.body.timestamp,
     updated_timestamp: null,
+    userId: req.body.userId,
   })
     .then((data) => res.send({ message: "Entry added successfully!", data }))
     .catch((err) => {
@@ -14,4 +15,14 @@ const create = async (req, res) => {
     });
 };
 
-module.exports = { create };
+const findAll = async (req, res) => {
+  Entry.findAll({
+    userId: req.body.userId,
+  })
+    .then((data) => res.send({ data }))
+    .catch((err) => {
+      res.status(500).send({ message: err.message });
+    });
+};
+
+module.exports = { create, findAll };

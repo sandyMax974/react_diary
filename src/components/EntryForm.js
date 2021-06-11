@@ -12,6 +12,7 @@ import {
 } from "semantic-ui-react";
 import { Editor } from "@tinymce/tinymce-react";
 import DataService from "../services/Data.service";
+import AuthService from "../services/Auth.service";
 
 const EntryForm = ({ onSave }) => {
   // ---> this section needs to be moved to its own component
@@ -29,8 +30,8 @@ const EntryForm = ({ onSave }) => {
   });
   // <---
   const created = `${date}  ${time}`;
-
   const [text, setText] = useState("");
+  const userId = AuthService.getCurrentUser().userId;
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -39,9 +40,8 @@ const EntryForm = ({ onSave }) => {
       alert("Please add some content");
       return;
     }
-
     // onSave({ created, text, timestamp });
-    DataService.create(created, text, timestamp);
+    DataService.create(created, text, timestamp, userId);
 
     setText("");
   };
