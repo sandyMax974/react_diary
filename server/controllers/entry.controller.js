@@ -18,7 +18,7 @@ const create = async (req, res) => {
 const findAll = async (req, res) => {
   Entry.findAll({
     where: {
-      userId: req.body.userId,
+      userId: req.params.userId,
     },
   })
     .then((data) => res.send({ data }))

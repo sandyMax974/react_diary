@@ -7,8 +7,6 @@ import Page from "./Page";
 const Diary = ({ showAddForm }) => {
   const [entries, setEntries] = useState([]);
   const userId = AuthService.getCurrentUser().userId;
-  console.log(typeof userId);
-  console.log(typeof userId.toString());
 
   useEffect(() => {
     const getEntries = async (userId) => {
@@ -17,12 +15,6 @@ const Diary = ({ showAddForm }) => {
     };
     getEntries();
   }, []);
-
-  // const fetchEntries = async () => {
-  //   const res = await fetch("http://localhost:5000/entries");
-  //   const data = await res.json();
-  //   return data;
-  // };
 
   const fetchEntry = async (id) => {
     const res = await fetch(`http://localhost:5000/entries/${id}`);

@@ -13,7 +13,7 @@ class DataService {
   }
 
   getAll(userId) {
-    return axios.get(API_DATA_URL, userId);
+    return axios.get(API_DATA_URL, { params: { userId } });
   }
 }
 
