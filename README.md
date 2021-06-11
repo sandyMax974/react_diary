@@ -31,6 +31,23 @@ $ npm run server
 $npm start
 ```
 
+## Tech Stack
+
+#### Backend
+Express
+bcryptjs 
+jsonwebtoken 
+Sequelize
+PostgreSQL
+
+#### Frontend
+React
+react-router-dom 
+axios 
+react-validation 
+Semantic-ui
+
+
 ## Planning
 
 ### Mock-ups
