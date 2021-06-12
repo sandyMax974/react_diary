@@ -22,18 +22,6 @@ const Diary = ({ showAddForm }) => {
     return data;
   };
 
-  const addEntry = async (entry) => {
-    // const res = await fetch("http://localhost:5000/entries", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(entry),
-    // });
-    // const data = await res.json();
-    // setEntries([...entries, data]);
-  };
-
   const deleteEntry = async (id) => {
     await fetch(`http://localhost:5000/entries/${id}`, {
       method: "DELETE",
@@ -69,8 +57,8 @@ const Diary = ({ showAddForm }) => {
     <div style={{ marginTop: "5em" }}>
       <Page
         showAddForm={showAddForm}
-        onSave={addEntry}
         entries={entries}
+        setEntries={setEntries}
         onDelete={deleteEntry}
         getEntry={fetchEntry}
         onUpdate={updateEntry}

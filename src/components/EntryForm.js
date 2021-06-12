@@ -14,7 +14,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import DataService from "../services/Data.service";
 import AuthService from "../services/Auth.service";
 
-const EntryForm = ({ onSave }) => {
+const EntryForm = ({ entries, setEntries }) => {
   // ---> this section needs to be moved to its own component
   const timestamp = new Date();
   const options = {
@@ -33,15 +33,16 @@ const EntryForm = ({ onSave }) => {
   const [text, setText] = useState("");
   const userId = AuthService.getCurrentUser().userId;
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     if (!text) {
       alert("Please add some content");
       return;
     }
-    // onSave({ created, text, timestamp });
-    DataService.create(created, text, timestamp, userId);
+    const data = await DataService.create(created, text, timestamp, userId);
+
+    setEntries([...entries, data.data.data]);
 
     setText("");
   };

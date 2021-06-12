@@ -16,9 +16,10 @@ const create = async (req, res) => {
 };
 
 const findAll = async (req, res) => {
+  console.log("logging request query", req.query);
   Entry.findAll({
     where: {
-      userId: req.params.userId,
+      userId: req.query.userId,
     },
   })
     .then((data) => res.send({ data }))
