@@ -5,7 +5,7 @@ import { Divider } from "semantic-ui-react";
 
 const Page = ({
   setEntries,
-  onDelete,
+  // onDelete,
   entries,
   getEntry,
   onUpdate,
@@ -17,7 +17,8 @@ const Page = ({
       <Divider hidden />
       <EntryList
         entries={entries}
-        onDelete={onDelete}
+        // onDelete={onDelete}
+        setEntries={setEntries}
         getEntry={getEntry}
         onUpdate={onUpdate}
       />

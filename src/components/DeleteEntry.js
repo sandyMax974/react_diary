@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Modal, Button, Header, Icon } from "semantic-ui-react";
+import DataService from "../services/Data.service";
 
-const DeleteEntry = ({ entry, onDelete }) => {
+const DeleteEntry = ({ entries, entry, setEntries }) => {
   const [open, setOpen] = useState(false);
 
-  const onConfirmation = (id) => {
-    onDelete(id);
+  const onConfirmation = async (id) => {
+    const data = await DataService.delete(id);
     setOpen(false);
+    setEntries(entries.filter((entry) => entry.id !== id));
   };
 
   return (

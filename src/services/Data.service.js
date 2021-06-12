@@ -13,7 +13,11 @@ class DataService {
   }
 
   getAll(userId) {
-    return axios.get(API_DATA_URL + "?userId=" + userId);
+    return axios.get(API_DATA_URL + `?userId=${userId}`);
+  }
+
+  delete(id) {
+    return axios.delete(API_DATA_URL + `/${id}`);
   }
 }
 

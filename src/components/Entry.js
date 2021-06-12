@@ -4,7 +4,7 @@ import DeleteEntry from "./DeleteEntry";
 import UpdateEntry from "./UpdateEntry";
 import ViewEntry from "./ViewEntry";
 
-const Entry = ({ entry, onDelete, onUpdate, keyId }) => {
+const Entry = ({ entries, entry, onUpdate, keyId, setEntries }) => {
   const wordCount = entry.text.split(" ").length;
   const truncatedText = entry.text.split(" ").slice(0, 100).join(" ");
 
@@ -48,7 +48,9 @@ const Entry = ({ entry, onDelete, onUpdate, keyId }) => {
           <DeleteEntry
             key={`delete-${keyId}`}
             entry={entry}
-            onDelete={onDelete}
+            entries={entries}
+            setEntries={setEntries}
+            // onDelete={onDelete}
           />,
         ]}
       />

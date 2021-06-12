@@ -16,7 +16,6 @@ const create = async (req, res) => {
 };
 
 const findAll = async (req, res) => {
-  console.log("logging request query", req.query);
   Entry.findAll({
     where: {
       userId: req.query.userId,
@@ -28,4 +27,22 @@ const findAll = async (req, res) => {
     });
 };
 
-module.exports = { create, findAll };
+const remove = async (req, res) => {
+  Entry.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((num) => {
+      if (num == 1) {
+        res.send({ message: "Entry deleted successfully!" });
+      } else {
+        res.send(() => ({ message: "Can't find entry" }));
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({ message: err.message });
+    });
+};
+
+module.exports = { create, findAll, remove };
