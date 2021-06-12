@@ -50,7 +50,6 @@ const Entry = ({ entries, entry, onUpdate, keyId, setEntries }) => {
             entry={entry}
             entries={entries}
             setEntries={setEntries}
-            // onDelete={onDelete}
           />,
         ]}
       />

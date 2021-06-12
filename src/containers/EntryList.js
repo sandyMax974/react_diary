@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Header, Divider, Container } from "semantic-ui-react";
 import Entry from "../components/Entry";
 
-const EntryList = ({ entries, onDelete, getEntry, onUpdate, setEntries }) => {
+const EntryList = ({ entries, getEntry, onUpdate, setEntries }) => {
   const descendingOrder = entries.sort((a, b) => {
     const dateA = Date.parse(a.timestamp);
     const dateB = Date.parse(b.timestamp);
@@ -23,7 +23,6 @@ const EntryList = ({ entries, onDelete, getEntry, onUpdate, setEntries }) => {
                   keyId={entry.id}
                   entry={entry}
                   entries={entries}
-                  // onDelete={onDelete}
                   setEntries={setEntries}
                   getEntry={getEntry}
                   onUpdate={onUpdate}

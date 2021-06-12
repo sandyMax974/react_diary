@@ -6,7 +6,7 @@ const DeleteEntry = ({ entries, entry, setEntries }) => {
   const [open, setOpen] = useState(false);
 
   const onConfirmation = async (id) => {
-    const data = await DataService.delete(id);
+    await DataService.delete(id);
     setOpen(false);
     setEntries(entries.filter((entry) => entry.id !== id));
   };

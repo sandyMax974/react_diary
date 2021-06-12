@@ -22,13 +22,6 @@ const Diary = ({ showAddForm }) => {
     return data;
   };
 
-  const deleteEntry = async (id) => {
-    await fetch(`http://localhost:5000/entries/${id}`, {
-      method: "DELETE",
-    });
-    setEntries(entries.filter((entry) => entry.id !== id));
-  };
-
   const updateEntry = async (entry) => {
     const id = entry.id;
     const text = entry.text;
@@ -59,7 +52,6 @@ const Diary = ({ showAddForm }) => {
         showAddForm={showAddForm}
         entries={entries}
         setEntries={setEntries}
-        onDelete={deleteEntry}
         getEntry={fetchEntry}
         onUpdate={updateEntry}
       />
