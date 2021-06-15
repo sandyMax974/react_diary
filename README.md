@@ -5,15 +5,17 @@ This project is aimed at practicing React whilst using Agile tools for planning 
 ## Components Hierarchy
 ```
 App
+|___ Registration
+|___ Login
 |___ Header
-|   |___ NewButton
-|___ Page
-    |___ EntryForm
-    |___ EntryList
-    |___ Entry
-        |___ Edit
-        |___ View
-        |___ Delete
+|___ Diary
+    |___ Page
+        |___ EntryForm
+        |___ EntryList
+            |___ Entry
+                |___ Edit
+                |___ View
+                |___ Delete
 ```
 
 ## How to install
@@ -24,8 +26,8 @@ $ npm install
 ```
 ## How to run
 ```
-// starts the json-server on port 5000
-$ npm run server 
+// starts the server on port 8080
+$ node server/lib/server.js
 
 // starts the react application on port 3000
 $npm start
@@ -46,16 +48,3 @@ react-router-dom
 axios 
 react-validation 
 Semantic-ui
-
-
-## Planning
-
-### Mock-ups
-![mock-up-1](https://github.com/sandyMax974/react_diary/blob/main/planning/diary_app%20-%20mockup_1.png)
-
-![mock-up-2](https://github.com/sandyMax974/react_diary/blob/main/planning/diary_app%20-%20mockup_2.jpg)
-
-### Process
-![jira-board-1](https://github.com/sandyMax974/react_diary/blob/main/planning/Jira%20Board%20-%201.png)
-
-![jira-board-2](https://github.com/sandyMax974/react_diary/blob/main/planning/Jira%20Board%20-%202.png)
