@@ -36,15 +36,14 @@ $npm start
 ## Tech Stack
 
 #### Backend
-Express
-bcryptjs 
-jsonwebtoken 
-Sequelize
-PostgreSQL
+- Express
+- bcryptjs 
+- jsonwebtoken 
+- Sequelize
+- PostgreSQL
 
 #### Frontend
-React
-react-router-dom 
-axios 
-react-validation 
-Semantic-ui
+- React
+- react-router-dom 
+- axios 
+- Semantic-ui
